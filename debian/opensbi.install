@@ -1,2 +1,4 @@
-build/platform/generic/firmware/fw_*.elf /usr/lib/riscv64-linux-gnu/opensbi/generic/
-build/platform/generic/firmware/fw_*.bin /usr/lib/riscv64-linux-gnu/opensbi/generic/
+debian/build32/platform/generic/firmware/fw_*.elf /usr/lib/riscv32-linux-gnu/opensbi/generic/
+debian/build32/platform/generic/firmware/fw_*.bin /usr/lib/riscv32-linux-gnu/opensbi/generic/
+debian/build64/platform/generic/firmware/fw_*.elf /usr/lib/riscv64-linux-gnu/opensbi/generic/
+debian/build64/platform/generic/firmware/fw_*.bin /usr/lib/riscv64-linux-gnu/opensbi/generic/

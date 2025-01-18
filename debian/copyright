@@ -17,6 +17,20 @@ Copyright: 2019-2020 Western Digital Corporation or its affiliates and
  2022 StarFive Technology Co., Ltd.
  2022 Renesas Electronics Corporation
  2023 RISC-V International
+ 2023 Andes Technology Corporation
+ 2023 Inochi Amaoto <inochiama@outlook.com>
+ 2023 Alibaba Group Holding Limited.
+ 2023 Ventana Micro Systems Inc.
+ 2023 IPADS@SJTU
+ 2023 Lin Chunzhi <chunzhi.lin@sophgo.com>
+ 2023 Rivos Systems Inc.
+ 2023 Rivos Systems.
+ 2023 Ventana Micro System, Inc.
+ 2023 Ventana Micro Systems, Inc.
+ 2024 Rivos Inc.
+ 2023-2024 Ventana Micro Systems Inc.
+ 2024 SiFive Inc.
+ 2024 Beijing ESWIN Computing Technology Co., Ltd.
 License: BSD-2-clause
 
 Files: include/sbi_utils/sys/htif.h
@@ -30,6 +44,13 @@ License: BSD-2-clause
 
 Files: platform/generic/renesas/rzfive/rzfive.c
 Copyright: 2022 Renesas Electronics Corp.
+License: GPL-2
+
+Files: platform/generic/andes/andes_pma.c
+ platform/generic/include/andes/andes.h
+Copyright:
+ 2023 Renesas Electronics Corp.
+ 2024 Andes Technology Corporation
 License: GPL-2
 
 Files: platform/fpga/ariane/*
@@ -74,6 +95,7 @@ Files:
 Copyright:
  2020 Bin Meng <bmeng.cn@gmail.com>
  2021 Western Digital Corporation or its affiliates.
+ 2024 SiFive
 License: BSD-2-clause
 
 Files: scripts/Kconfiglib/*

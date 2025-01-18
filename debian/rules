@@ -7,6 +7,8 @@ else
 VERBOSE=0
 endif
 
+unexport ELF_PACKAGE_METADATA
+
 %:
 	dh $@
 
@@ -16,8 +18,17 @@ override_dh_auto_build:
 	CROSS_COMPILE=riscv64-linux-gnu- make \
 		V=$(VERBOSE) \
 		FW_PAYLOAD=n \
+		O=debian/build64 \
 		PLATFORM=generic ; \
-	for elffile in build/platform/generic/firmware/fw_*.elf ; do \
+
+	CROSS_COMPILE=riscv64-linux-gnu- make \
+		V=$(VERBOSE) \
+		FW_PAYLOAD=n \
+		O=debian/build32 \
+		PLATFORM_RISCV_XLEN=32 \
+		PLATFORM=generic ; \
+
+	for elffile in debian/build*/platform/generic/firmware/fw_*.elf ; do \
 		riscv64-linux-gnu-strip --remove-section=.comment \
 			--remove-section=.note \
 			$${elffile} ; \
@@ -26,6 +37,10 @@ override_dh_auto_build:
 override_dh_installdocs:
 	dh_installdocs --exclude=doxygen.cfg
 
-override_dh_install:
-	chmod -x build/platform/generic/firmware/fw_*.bin
-	dh_install
+override_dh_auto_install:
+	dh_auto_install --sourcedir=debian/build64
+	dh_auto_install --sourcedir=debian/build32
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf debian/build32 debian/build64
